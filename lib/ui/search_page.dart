@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_weather/bloc/weather_bloc.dart';
-import 'package:flutter_weather/repository/weather_repository.dart';
 import 'package:flutter_weather/ui/size_config.dart';
 import 'package:lottie/lottie.dart';
-
 import 'show_weather.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
+  @override
+  _SearchPageState createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -15,11 +18,12 @@ class SearchPage extends StatelessWidget {
     var cityController = TextEditingController();
     return Container(
       decoration: BoxDecoration(
+        color: Colors.grey[900],
         image: DecorationImage(
           image: AssetImage("assets/bg.jpg"),
           fit: BoxFit.cover,
           colorFilter: new ColorFilter.mode(
-            Colors.black.withOpacity(0.82),
+            Colors.black.withOpacity(0.8),
             BlendMode.colorBurn,
           ),
         ),
@@ -31,7 +35,7 @@ class SearchPage extends StatelessWidget {
           Lottie.asset(
             'assets/weather.json',
             fit: BoxFit.contain,
-            height: SizeConfig.screenHeight * 0.213,
+            height: SizeConfig.screenHeight * 0.216,
             width: 500,
           ),
           Spacer(),
@@ -48,14 +52,14 @@ class SearchPage extends StatelessWidget {
                       Text(
                         "Search Weather",
                         style: TextStyle(
-                            fontSize: 40,
+                            fontSize: SizeConfig.blockHeight * 5,
                             fontWeight: FontWeight.w500,
                             color: Colors.white70),
                       ),
                       Text(
                         "Instanly",
                         style: TextStyle(
-                            fontSize: 40,
+                            fontSize: SizeConfig.blockHeight * 4.8,
                             fontWeight: FontWeight.w200,
                             color: Colors.white70),
                       ),

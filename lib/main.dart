@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_weather/bloc/weather_bloc.dart';
 import 'package:flutter_weather/repository/weather_repository.dart';
+import 'package:splashscreen/splashscreen.dart';
 
 import 'ui/search_page.dart';
 
@@ -19,9 +20,28 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-          body: BlocProvider(
-            create: (context) => WeatherBloc(WeatherRepo()),
-            child: SearchPage(),
+          backgroundColor: Colors.grey[900],
+          body: SplashScreen(
+            photoSize: 110,
+            image: Image.asset(
+              'assets/splash.png',
+            ),
+            backgroundColor: Colors.grey[900],
+            gradientBackground: LinearGradient(
+              colors: [Colors.black, Colors.black87],
+              begin: FractionalOffset(0.0, 0.0),
+              end: FractionalOffset(1.0, 0.0),
+              stops: [0.0, 1.0],
+              tileMode: TileMode.repeated,
+            ),
+            loaderColor: Colors.blue[100],
+            seconds: 200,
+            navigateAfterSeconds: Scaffold(
+              body: BlocProvider(
+                create: (context) => WeatherBloc(WeatherRepo()),
+                child: SearchPage(),
+              ),
+            ),
           ),
         ));
   }

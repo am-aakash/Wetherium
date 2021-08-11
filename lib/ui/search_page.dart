@@ -35,7 +35,7 @@ class _SearchPageState extends State<SearchPage> {
           Lottie.asset(
             'assets/weather.json',
             fit: BoxFit.contain,
-            height: SizeConfig.screenHeight * 0.216,
+            height: SizeConfig.screenHeight * 0.21,
             width: 500,
           ),
           Spacer(),

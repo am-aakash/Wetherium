@@ -32,10 +32,10 @@ class MyApp extends StatelessWidget {
               begin: FractionalOffset(0.0, 0.0),
               end: FractionalOffset(1.0, 0.0),
               stops: [0.0, 1.0],
-              tileMode: TileMode.repeated,
+              tileMode: TileMode.clamp,
             ),
             loaderColor: Colors.blue[100],
-            seconds: 200,
+            seconds: 2,
             navigateAfterSeconds: Scaffold(
               body: BlocProvider(
                 create: (context) => WeatherBloc(WeatherRepo()),

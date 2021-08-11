@@ -19,12 +19,12 @@ class SearchPage extends StatelessWidget {
         Center(
             child: Container(
           child: FlareActor(
-            "assets/WorldSpin.flr",
+            "assets\WorldSpin.flr",
             fit: BoxFit.contain,
             animation: "roll",
           ),
-          height: 300,
-          width: 300,
+          height: 250,
+          width: 250,
         )),
         BlocBuilder<WeatherBloc, WeatherState>(
           builder: (context, state) {

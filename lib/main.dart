@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_weather/bloc/weather_bloc.dart';
 import 'package:flutter_weather/repository/weather_repository.dart';
 
+import 'ui/search_page.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -11,12 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-          resizeToAvoidBottomInset: false,
+          //resizeToAvoidBottomInset: false,
           backgroundColor: Colors.grey[900],
           body: BlocProvider(
             create: (context) => WeatherBloc(WeatherRepo()),

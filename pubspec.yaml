@@ -26,6 +26,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets\weather_large.json
-    - assets\weather.json
-    - assets\
+    - assets/weather_large.json
+    - assets/weather.json
+    - assets/bg.jpg

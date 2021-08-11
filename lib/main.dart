@@ -19,8 +19,6 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-          //resizeToAvoidBottomInset: false,
-          backgroundColor: Colors.grey[900],
           body: BlocProvider(
             create: (context) => WeatherBloc(WeatherRepo()),
             child: SearchPage(),

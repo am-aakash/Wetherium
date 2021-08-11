@@ -1,8 +1,8 @@
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_weather/bloc/weather_bloc.dart';
 import 'package:flutter_weather/repository/weather_repository.dart';
+import 'package:lottie/lottie.dart';
 
 import 'show_weather.dart';
 
@@ -18,10 +18,14 @@ class SearchPage extends StatelessWidget {
       children: <Widget>[
         Center(
             child: Container(
-          child: FlareActor(
-            "assets\WorldSpin.flr",
+          // child: FlareActor(
+          //   "assets\WorldSpin.flr",
+          //   fit: BoxFit.contain,
+          //   animation: "roll",
+          // ),
+          child: Lottie.asset(
+            'assets/LottieLogo1.json',
             fit: BoxFit.contain,
-            animation: "roll",
           ),
           height: 250,
           width: 250,

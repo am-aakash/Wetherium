@@ -119,11 +119,38 @@ class _SearchPageState extends State<SearchPage> {
               else if (state is WeatherIsLoaded)
                 return ShowWeather(state.getWeather, cityController.text);
               else
-                return Center(
-                  child: Text(
-                    "Couldn't load the Weather for this location",
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                return Container(
+                  padding: EdgeInsets.only(
+                    left: 32,
+                    right: 32,
                   ),
+                  child: Column(children: [
+                    Text(
+                      "Couldn't load the Weather for this location",
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 50,
+                      child: FlatButton(
+                        shape: new RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        onPressed: () {
+                          BlocProvider.of<WeatherBloc>(context)
+                              .add(ResetWeather());
+                        },
+                        color: Colors.blue[800],
+                        child: Text(
+                          "Search Again",
+                          style: TextStyle(color: Colors.white70, fontSize: 16),
+                        ),
+                      ),
+                    )
+                  ]),
                 );
             },
           ),

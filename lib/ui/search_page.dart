@@ -103,7 +103,7 @@ class _SearchPageState extends State<SearchPage> {
                           onPressed: () {
                             weatherBloc.add(FetchWeather(cityController.text));
                           },
-                          color: Colors.lightBlue,
+                          color: Colors.blue[800],
                           child: Text(
                             "Search",
                             style:
@@ -119,9 +119,11 @@ class _SearchPageState extends State<SearchPage> {
               else if (state is WeatherIsLoaded)
                 return ShowWeather(state.getWeather, cityController.text);
               else
-                return Text(
-                  "Error",
-                  style: TextStyle(color: Colors.white),
+                return Center(
+                  child: Text(
+                    "Couldn't load the Weather for this location",
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
                 );
             },
           ),

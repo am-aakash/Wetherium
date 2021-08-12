@@ -19,7 +19,6 @@ class WeatherIsLoaded extends WeatherState {
   WeatherModel get getWeather => _weather;
 
   @override
-  // TODO: implement props
   List<Object> get props => [_weather];
 }
 

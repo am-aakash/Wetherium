@@ -64,7 +64,7 @@ class ShowWeather extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 40,
             ),
             Container(
               width: double.infinity,
@@ -75,9 +75,9 @@ class ShowWeather extends StatelessWidget {
                 onPressed: () {
                   BlocProvider.of<WeatherBloc>(context).add(ResetWeather());
                 },
-                color: Colors.lightBlue,
+                color: Colors.blue[800],
                 child: Text(
-                  "Search",
+                  "Search Again",
                   style: TextStyle(color: Colors.white70, fontSize: 16),
                 ),
               ),

@@ -14,6 +14,7 @@ dependencies:
 
   flutter_bloc: ^7.1.0
   bloc: ^7.0.0
+
   equatable: ^2.0.3
   rxdart: ^0.26.0
   http: ^0.13.0
